@@ -28,7 +28,7 @@ import org.sqlite.javax.SQLiteConnectionPoolDataSource;
 @EnableJms
 public class AppConfig {
 
-    
+    //MQ connection factory settings 
     @Bean(name = "MQConnection")
     public ConnectionFactory getMQConnectionFactory(){
         UserCredentialsConnectionFactoryAdapter connectionFactory = new UserCredentialsConnectionFactoryAdapter();
@@ -57,7 +57,7 @@ public class AppConfig {
         }
          return factory;
     }
-    
+    //JMSTemplate 
     @Bean
     public JmsTemplate getJmsTemplate(){
         JmsTemplate jmsTemplate = new JmsTemplate();
@@ -65,13 +65,14 @@ public class AppConfig {
         return jmsTemplate;
     }
     
+    //JMS Listener Object
     @Bean(name = {"listener"})
     public DefaultJmsListenerContainerFactory getMqConnection() {
         DefaultJmsListenerContainerFactory defaultFactory = new DefaultJmsListenerContainerFactory();
         UserCredentialsConnectionFactoryAdapter connectionFactory = new UserCredentialsConnectionFactoryAdapter();
         connectionFactory.setTargetConnectionFactory(getConnectionFactory()); 
-        connectionFactory.setUsername("spanicker");
-        connectionFactory.setPassword("AditRagi4");
+        connectionFactory.setUsername("XXXX");
+        connectionFactory.setPassword("XXXXX");
         defaultFactory.setConnectionFactory(connectionFactory);
         return defaultFactory;
     }
