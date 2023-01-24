@@ -33,8 +33,8 @@ public class AppConfig {
     public ConnectionFactory getMQConnectionFactory(){
         UserCredentialsConnectionFactoryAdapter connectionFactory = new UserCredentialsConnectionFactoryAdapter();
         connectionFactory.setTargetConnectionFactory(getConnectionFactory()); 
-        connectionFactory.setUsername("spanicker");
-        connectionFactory.setPassword("AditRagi4");
+        connectionFactory.setUsername("XXXX");
+        connectionFactory.setPassword("XXXX");
         return connectionFactory;     
     }
     
